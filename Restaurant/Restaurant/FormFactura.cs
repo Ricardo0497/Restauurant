@@ -70,6 +70,7 @@ namespace Restaurant
 
             var factura = (Factura)listaFacturasBindingSource.Current;
             var resultado = _facturaBL.GuardarFactura(factura);
+
             if (resultado .Exitoso  == true )
             {
                 listaFacturasBindingSource.ResetBindings(false);

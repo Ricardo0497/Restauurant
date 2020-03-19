@@ -62,7 +62,6 @@
             this.totalTextBox = new System.Windows.Forms.TextBox();
             this.clientesBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clienteIdComboBox = new System.Windows.Forms.ComboBox();
             this.listaClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facturaDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facturaDetalleDataGridView = new System.Windows.Forms.DataGridView();
@@ -72,6 +71,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.clienteIdComboBox = new System.Windows.Forms.ComboBox();
             activoLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
@@ -173,10 +173,10 @@
             // 
             // listaFacturasBindingNavigator
             // 
-            this.listaFacturasBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.listaFacturasBindingNavigator.AddNewItem = null;
             this.listaFacturasBindingNavigator.BindingSource = this.listaFacturasBindingSource;
             this.listaFacturasBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.listaFacturasBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.listaFacturasBindingNavigator.DeleteItem = null;
             this.listaFacturasBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.listaFacturasBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -316,6 +316,7 @@
             // activoCheckBox
             // 
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaFacturasBindingSource, "Activo", true));
+            this.activoCheckBox.Enabled = false;
             this.activoCheckBox.Location = new System.Drawing.Point(103, 164);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(200, 24);
@@ -332,35 +333,42 @@
             // 
             // idTextBox
             // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaFacturasBindingSource, "Id", true));
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaFacturasBindingSource, "Id", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "00000"));
             this.idTextBox.Location = new System.Drawing.Point(103, 72);
             this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(200, 22);
+            this.idTextBox.ReadOnly = true;
+            this.idTextBox.Size = new System.Drawing.Size(85, 22);
             this.idTextBox.TabIndex = 10;
             // 
             // impuestoTextBox
             // 
-            this.impuestoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaFacturasBindingSource, "Impuesto", true));
+            this.impuestoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaFacturasBindingSource, "Impuesto", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.impuestoTextBox.Location = new System.Drawing.Point(403, 110);
             this.impuestoTextBox.Name = "impuestoTextBox";
+            this.impuestoTextBox.ReadOnly = true;
             this.impuestoTextBox.Size = new System.Drawing.Size(200, 22);
             this.impuestoTextBox.TabIndex = 12;
+            this.impuestoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // subtotalTextBox
             // 
-            this.subtotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaFacturasBindingSource, "Subtotal", true));
+            this.subtotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaFacturasBindingSource, "Subtotal", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.subtotalTextBox.Location = new System.Drawing.Point(403, 157);
             this.subtotalTextBox.Name = "subtotalTextBox";
+            this.subtotalTextBox.ReadOnly = true;
             this.subtotalTextBox.Size = new System.Drawing.Size(200, 22);
             this.subtotalTextBox.TabIndex = 14;
+            this.subtotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // totalTextBox
             // 
-            this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaFacturasBindingSource, "Total", true));
+            this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaFacturasBindingSource, "Total", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.totalTextBox.Location = new System.Drawing.Point(403, 204);
             this.totalTextBox.Name = "totalTextBox";
+            this.totalTextBox.ReadOnly = true;
             this.totalTextBox.Size = new System.Drawing.Size(200, 22);
             this.totalTextBox.TabIndex = 16;
+            this.totalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // clientesBLBindingSource
             // 
@@ -369,19 +377,6 @@
             // listaProductosBindingSource
             // 
             this.listaProductosBindingSource.DataSource = typeof(BL.Restaurant.Producto);
-            // 
-            // clienteIdComboBox
-            // 
-            this.clienteIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaFacturasBindingSource, "ClienteId", true));
-            this.clienteIdComboBox.DataSource = this.listaClientesBindingSource;
-            this.clienteIdComboBox.DisplayMember = "Nombre";
-            this.clienteIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.clienteIdComboBox.FormattingEnabled = true;
-            this.clienteIdComboBox.Location = new System.Drawing.Point(403, 70);
-            this.clienteIdComboBox.Name = "clienteIdComboBox";
-            this.clienteIdComboBox.Size = new System.Drawing.Size(200, 24);
-            this.clienteIdComboBox.TabIndex = 18;
-            this.clienteIdComboBox.ValueMember = "Id";
             // 
             // listaClientesBindingSource
             // 
@@ -464,6 +459,19 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // clienteIdComboBox
+            // 
+            this.clienteIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaFacturasBindingSource, "ClienteId", true));
+            this.clienteIdComboBox.DataSource = this.listaClientesBindingSource;
+            this.clienteIdComboBox.DisplayMember = "Nombre";
+            this.clienteIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.clienteIdComboBox.FormattingEnabled = true;
+            this.clienteIdComboBox.Location = new System.Drawing.Point(403, 70);
+            this.clienteIdComboBox.Name = "clienteIdComboBox";
+            this.clienteIdComboBox.Size = new System.Drawing.Size(200, 24);
+            this.clienteIdComboBox.TabIndex = 18;
+            this.clienteIdComboBox.ValueMember = "Id";
+            // 
             // FormFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -532,7 +540,6 @@
         private System.Windows.Forms.TextBox totalTextBox;
         private System.Windows.Forms.BindingSource clientesBLBindingSource;
         private System.Windows.Forms.BindingSource listaProductosBindingSource;
-        private System.Windows.Forms.ComboBox clienteIdComboBox;
         private System.Windows.Forms.BindingSource listaClientesBindingSource;
         private System.Windows.Forms.BindingSource facturaDetalleBindingSource;
         private System.Windows.Forms.DataGridView facturaDetalleDataGridView;
@@ -543,5 +550,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.ComboBox clienteIdComboBox;
     }
 }

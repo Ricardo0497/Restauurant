@@ -69,7 +69,7 @@ namespace BL.Restaurant
 
             CalcularExistencia(factura);
 
-            _contexto.SaveChanges();
+            _contexto.SaveChanges();   //Error
             resultado.Exitoso = true;
             return resultado;
         }
@@ -119,6 +119,42 @@ namespace BL.Restaurant
         {
             var resultado = new Resultado();
             resultado.Exitoso = true;
+
+            if (factura== null)
+            {
+                resultado.Mensaje = "Agregue factura para poderla guardar";
+                resultado.Exitoso = false;
+
+                return resultado;
+            }
+
+            if (factura.Activo == false)
+            {
+                resultado.Mensaje = "La factura esta anulada y no se pueden realizar cambios en ella";
+                resultado.Exitoso = false;
+            }
+
+       /*     if (factura.ClienteId == 0)
+            {
+                resultado.Mensaje = "Seleccione un cliente";
+                resultado.Exitoso = false;
+            }*/
+
+            if (factura.FacturaDetalle.Count == 0)
+            {
+                resultado.Mensaje = "Agregue productos a la factura";
+                resultado.Exitoso = false;
+            }
+
+            foreach (var detalle in factura.FacturaDetalle)
+            {
+                if (detalle.ProductoId == 0)
+                {
+                    resultado.Mensaje = "Seleccione productos validos";
+                    resultado.Exitoso = false;
+                }
+            }
+
 
             return resultado;
         
