@@ -123,8 +123,8 @@ namespace BL.Restaurant
                 resultado.Mensaje = "Seleccione un Tiempo de Comida";
                 resultado.Exitoso = false;
             }
-            
-                return resultado;
+
+            return resultado;
             }
 
         }
