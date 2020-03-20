@@ -67,7 +67,8 @@ namespace BL.Restaurant
                 return resultado;
             }
 
-            CalcularExistencia(factura);
+
+              CalcularExistencia(factura);
 
             _contexto.SaveChanges();   //Error
             resultado.Exitoso = true;
@@ -79,6 +80,7 @@ namespace BL.Restaurant
             if (factura !=null)
             {
                 double subtotal = 0;
+
                 foreach (var detalle in factura . FacturaDetalle )
                 {
                     var producto = _contexto.Productos.Find(detalle.ProductoId);
@@ -94,6 +96,20 @@ namespace BL.Restaurant
                 factura.Impuesto = subtotal * 0.15;
                 factura.Total = subtotal + factura.Impuesto;
             }
+        }
+        public bool AnularFactura(int id)
+        {
+            foreach (var factura in ListaFacturas )
+            {
+                if (factura.Id == id)
+                {
+                    factura.Activo = false;
+                    CalcularExistencia(factura);
+                    _contexto.SaveChanges();
+                        return true;
+                }
+            }
+            return false;
         }
 
         private void CalcularExistencia(Factura factura)

@@ -69,12 +69,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tiemposBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiempoIdComboBox = new System.Windows.Forms.ComboBox();
             this.listaTiemposBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriasBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaIdComboBox = new System.Windows.Forms.ComboBox();
             this.listaCategoriasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.listaCategoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.descripcionComboBox = new System.Windows.Forms.ComboBox();
             activoLabel = new System.Windows.Forms.Label();
             cantidadLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -441,19 +443,6 @@
             // 
             this.tiemposBLBindingSource.DataSource = typeof(BL.Restaurant.TiemposBL);
             // 
-            // tiempoIdComboBox
-            // 
-            this.tiempoIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productoBindingSource, "TiempoId", true));
-            this.tiempoIdComboBox.DataSource = this.listaTiemposBindingSource;
-            this.tiempoIdComboBox.DisplayMember = "Id";
-            this.tiempoIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tiempoIdComboBox.FormattingEnabled = true;
-            this.tiempoIdComboBox.Location = new System.Drawing.Point(135, 264);
-            this.tiempoIdComboBox.Name = "tiempoIdComboBox";
-            this.tiempoIdComboBox.Size = new System.Drawing.Size(230, 24);
-            this.tiempoIdComboBox.TabIndex = 22;
-            this.tiempoIdComboBox.ValueMember = "Id";
-            // 
             // listaTiemposBindingSource
             // 
             this.listaTiemposBindingSource.DataMember = "ListaTiempos";
@@ -486,16 +475,48 @@
             this.listaCategoriasBindingSource.DataMember = "ListaCategorias";
             this.listaCategoriasBindingSource.DataSource = this.categoriasBLBindingSource;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(135, 152);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(108, 22);
+            this.textBox1.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(47, 155);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 17);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Existencia";
+            // 
+            // descripcionComboBox
+            // 
+            this.descripcionComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTiemposBindingSource, "Descripcion", true));
+            this.descripcionComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTiemposBindingSource, "Id", true));
+            this.descripcionComboBox.DataSource = this.listaTiemposBindingSource;
+            this.descripcionComboBox.DisplayMember = "Descripcion";
+            this.descripcionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.descripcionComboBox.FormattingEnabled = true;
+            this.descripcionComboBox.Location = new System.Drawing.Point(139, 267);
+            this.descripcionComboBox.Name = "descripcionComboBox";
+            this.descripcionComboBox.Size = new System.Drawing.Size(226, 24);
+            this.descripcionComboBox.TabIndex = 26;
+            this.descripcionComboBox.ValueMember = "Id";
+            // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(770, 591);
+            this.Controls.Add(this.descripcionComboBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(categoriaIdLabel);
             this.Controls.Add(this.categoriaIdComboBox);
             this.Controls.Add(tiempoIdLabel);
-            this.Controls.Add(this.tiempoIdComboBox);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.fotoPictureBox);
@@ -566,11 +587,13 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.BindingSource tiemposBLBindingSource;
-        private System.Windows.Forms.ComboBox tiempoIdComboBox;
         private System.Windows.Forms.BindingSource categoriasBLBindingSource;
         private System.Windows.Forms.ComboBox categoriaIdComboBox;
         private System.Windows.Forms.BindingSource listaTiemposBindingSource;
         private System.Windows.Forms.BindingSource listaCategoriasBindingSource1;
         private System.Windows.Forms.BindingSource listaCategoriasBindingSource;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox descripcionComboBox;
     }
 }
