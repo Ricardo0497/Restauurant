@@ -70,7 +70,7 @@ namespace BL.Restaurant
 
               CalcularExistencia(factura);
 
-            _contexto.SaveChanges();   //Error
+            _contexto.SaveChanges();   
             resultado.Exitoso = true;
             return resultado;
         }
@@ -143,6 +143,12 @@ namespace BL.Restaurant
 
                 return resultado;
             }
+            if (factura.Id !=0 && factura.Activo == true )
+            {
+                resultado.Mensaje = "La factura ya fue guardada y no se pueden realizar cambios, Ingrese otra porfavor";
+                resultado.Exitoso = false;
+            }
+
 
             if (factura.Activo == false)
             {
