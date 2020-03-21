@@ -13,6 +13,12 @@ namespace BL.Restaurant
        
         protected override void Seed(Contexto contexto)
         {
+/*
+            var usuarioAdmin = new Usuario(); 
+            usuarioAdmin.Nombre = "admin";
+            usuarioAdmin.Contrasena = "123";
+
+            contexto.Usuarios.Add(usuarioAdmin);*/
 
              var tiempo1 = new Tiempo();
              tiempo1.Descripcion = "Mañana";
