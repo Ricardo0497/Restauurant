@@ -36,6 +36,7 @@
             System.Windows.Forms.Label subtotalLabel;
             System.Windows.Forms.Label clienteIdLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFactura));
+            System.Windows.Forms.Label label2;
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.listaFacturasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -78,6 +79,7 @@
             impuestoLabel = new System.Windows.Forms.Label();
             subtotalLabel = new System.Windows.Forms.Label();
             clienteIdLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaFacturasBindingNavigator)).BeginInit();
             this.listaFacturasBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaFacturasBindingSource)).BeginInit();
@@ -476,12 +478,22 @@
             this.label1.Text = "ANULADO";
             this.label1.Visible = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(327, 209);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(40, 17);
+            label2.TabIndex = 22;
+            label2.Text = "Total";
+            // 
             // FormFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(704, 610);
+            this.Controls.Add(label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);

@@ -66,9 +66,18 @@ namespace BL.Restaurant
             {
                 return resultado;
             }
+            foreach (var detalle in factura.FacturaDetalle)
+            {
+                var producto = _contexto.Productos.Find(detalle.ProductoId);
+                if (producto != null)
+                {
+                    producto.Cantidad  = producto.Cantidad - detalle.Cantidad;
+
+                }
+            }
 
 
-              CalcularExistencia(factura);
+            CalcularExistencia(factura);
 
             _contexto.SaveChanges();   
             resultado.Exitoso = true;
@@ -121,11 +130,11 @@ namespace BL.Restaurant
                 {
                     if (factura.Activo == true)
                     {
-                        producto.Existencia = producto.Existencia - detalle.Cantidad;
+                        producto.Cantidad = producto.Cantidad  - detalle.Cantidad;
                     }
                     else
                     {
-                        producto.Existencia = producto.Existencia + detalle.Cantidad;
+                        producto.Cantidad = producto.Cantidad + detalle.Cantidad;
                     }
                 }
             }
