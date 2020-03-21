@@ -118,7 +118,7 @@ namespace BL.Restaurant
             }
 
 
-                if (producto.TiempoId == 0)
+               if (producto.TiempoId == 0)
             {
                 resultado.Mensaje = "Seleccione un Tiempo de Comida";
                 resultado.Exitoso = false;

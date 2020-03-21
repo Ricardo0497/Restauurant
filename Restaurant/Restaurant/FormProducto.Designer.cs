@@ -35,8 +35,8 @@
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label precioLabel;
             System.Windows.Forms.Label categoriaIdLabel;
+            System.Windows.Forms.Label tiempoIdLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProducto));
-            System.Windows.Forms.Label tiempoIdLabel1;
             this.productoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -83,7 +83,7 @@
             idLabel = new System.Windows.Forms.Label();
             precioLabel = new System.Windows.Forms.Label();
             categoriaIdLabel = new System.Windows.Forms.Label();
-            tiempoIdLabel1 = new System.Windows.Forms.Label();
+            tiempoIdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingNavigator)).BeginInit();
             this.productoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
@@ -149,6 +149,15 @@
             categoriaIdLabel.Size = new System.Drawing.Size(77, 17);
             categoriaIdLabel.TabIndex = 22;
             categoriaIdLabel.Text = "Categoria :";
+            // 
+            // tiempoIdLabel
+            // 
+            tiempoIdLabel.AutoSize = true;
+            tiempoIdLabel.Location = new System.Drawing.Point(58, 266);
+            tiempoIdLabel.Name = "tiempoIdLabel";
+            tiempoIdLabel.Size = new System.Drawing.Size(63, 17);
+            tiempoIdLabel.TabIndex = 25;
+            tiempoIdLabel.Text = "Tiempo :";
             // 
             // productoBindingNavigator
             // 
@@ -400,7 +409,7 @@
             this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.productoBindingSource, "Foto", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.fotoPictureBox.Location = new System.Drawing.Point(533, 41);
             this.fotoPictureBox.Name = "fotoPictureBox";
-            this.fotoPictureBox.Size = new System.Drawing.Size(205, 135);
+            this.fotoPictureBox.Size = new System.Drawing.Size(250, 156);
             this.fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fotoPictureBox.TabIndex = 16;
             this.fotoPictureBox.TabStop = false;
@@ -482,26 +491,17 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Existencia";
             // 
-            // tiempoIdLabel1
-            // 
-            tiempoIdLabel1.AutoSize = true;
-            tiempoIdLabel1.Location = new System.Drawing.Point(55, 270);
-            tiempoIdLabel1.Name = "tiempoIdLabel1";
-            tiempoIdLabel1.Size = new System.Drawing.Size(59, 17);
-            tiempoIdLabel1.TabIndex = 26;
-            tiempoIdLabel1.Text = "Tiempo:";
-            // 
             // tiempoIdComboBox
             // 
-            this.tiempoIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTiemposBindingSource, "Id", true));
+            this.tiempoIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productoBindingSource, "TiempoId", true));
             this.tiempoIdComboBox.DataSource = this.listaTiemposBindingSource;
             this.tiempoIdComboBox.DisplayMember = "Descripcion";
             this.tiempoIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tiempoIdComboBox.FormattingEnabled = true;
-            this.tiempoIdComboBox.Location = new System.Drawing.Point(135, 267);
+            this.tiempoIdComboBox.Location = new System.Drawing.Point(138, 263);
             this.tiempoIdComboBox.Name = "tiempoIdComboBox";
-            this.tiempoIdComboBox.Size = new System.Drawing.Size(230, 24);
-            this.tiempoIdComboBox.TabIndex = 27;
+            this.tiempoIdComboBox.Size = new System.Drawing.Size(227, 24);
+            this.tiempoIdComboBox.TabIndex = 26;
             this.tiempoIdComboBox.ValueMember = "Id";
             // 
             // FormProducto
@@ -510,7 +510,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(795, 591);
-            this.Controls.Add(tiempoIdLabel1);
+            this.Controls.Add(tiempoIdLabel);
             this.Controls.Add(this.tiempoIdComboBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);

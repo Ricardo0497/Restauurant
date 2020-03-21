@@ -14,8 +14,8 @@ namespace BL.Restaurant
         protected override void Seed(Contexto contexto)
         {
 
-            var tiempo1 = new Tiempo();
-              tiempo1.Descripcion = "Mañana";
+             var tiempo1 = new Tiempo();
+             tiempo1.Descripcion = "Mañana";
             contexto.Tiempos.Add(tiempo1);
 
             var tiempo2 = new Tiempo();
