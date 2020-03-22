@@ -45,7 +45,7 @@ namespace Restaurant
             Contrasena = textBox2.Text;
 
             button1.Enabled = false;
-            button1.Text = "Verificando...";
+            button1.Text = "Verificando Usuairio...";
             Application.DoEvents();
 
             var resultado = _seguridad.Autorizar (Usuario, Contrasena);
