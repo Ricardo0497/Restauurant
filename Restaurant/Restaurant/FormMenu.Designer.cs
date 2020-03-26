@@ -34,6 +34,7 @@
             this.diarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.semanalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mensualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +48,7 @@
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.reporteDeProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +73,8 @@
             this.diarioToolStripMenuItem,
             this.semanalToolStripMenuItem,
             this.mensualToolStripMenuItem,
-            this.reporteDeProductoToolStripMenuItem});
+            this.reporteDeProductoToolStripMenuItem,
+            this.reporteDeFacturaToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -98,6 +100,13 @@
             this.mensualToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.mensualToolStripMenuItem.Text = "Mensual";
             this.mensualToolStripMenuItem.Click += new System.EventHandler(this.mensualToolStripMenuItem_Click);
+            // 
+            // reporteDeProductoToolStripMenuItem
+            // 
+            this.reporteDeProductoToolStripMenuItem.Name = "reporteDeProductoToolStripMenuItem";
+            this.reporteDeProductoToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.reporteDeProductoToolStripMenuItem.Text = "Reporte de Producto";
+            this.reporteDeProductoToolStripMenuItem.Click += new System.EventHandler(this.reporteDeProductoToolStripMenuItem_Click);
             // 
             // mantenimientoToolStripMenuItem
             // 
@@ -204,12 +213,12 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // reporteDeProductoToolStripMenuItem
+            // reporteDeFacturaToolStripMenuItem
             // 
-            this.reporteDeProductoToolStripMenuItem.Name = "reporteDeProductoToolStripMenuItem";
-            this.reporteDeProductoToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
-            this.reporteDeProductoToolStripMenuItem.Text = "Reporte de Producto";
-            this.reporteDeProductoToolStripMenuItem.Click += new System.EventHandler(this.reporteDeProductoToolStripMenuItem_Click);
+            this.reporteDeFacturaToolStripMenuItem.Name = "reporteDeFacturaToolStripMenuItem";
+            this.reporteDeFacturaToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.reporteDeFacturaToolStripMenuItem.Text = "Reporte de Factura";
+            this.reporteDeFacturaToolStripMenuItem.Click += new System.EventHandler(this.reporteDeFacturaToolStripMenuItem_Click);
             // 
             // FormMenu
             // 
@@ -253,5 +262,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem reporteDeProductoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeFacturaToolStripMenuItem;
     }
 }

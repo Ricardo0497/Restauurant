@@ -1,6 +1,6 @@
 ﻿namespace Restaurant
 {
-    partial class FormReporteProducto
+    partial class FormReporteFacturas
     {
         /// <summary>
         /// Required designer variable.
@@ -40,18 +40,18 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ShowGroupTreeButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(822, 522);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(556, 503);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // FormReporteProducto
+            // FormReporteFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 522);
+            this.ClientSize = new System.Drawing.Size(556, 503);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "FormReporteProducto";
-            this.Text = "Reporte de Producto";
+            this.Name = "FormReporteFacturas";
+            this.Text = "Reporte de Facturas";
             this.ResumeLayout(false);
 
         }

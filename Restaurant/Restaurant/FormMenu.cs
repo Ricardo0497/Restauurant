@@ -42,8 +42,8 @@ namespace Restaurant
         private void mensualToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var formMensual = new FormMensual();
-            
-            formMensual.Show();
+
+            formMensual.Show();  
         }
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -119,6 +119,13 @@ namespace Restaurant
             var formreporteProductos = new FormReporteProducto();
      //     formreporteProductos.MdiParent = this;
             formreporteProductos.Show();
+        }
+
+        private void reporteDeFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formreporteFacturas = new FormReporteFacturas();
+            //     formreporteProductos.MdiParent = this;
+            formreporteFacturas.Show();
         }
     }
 }
