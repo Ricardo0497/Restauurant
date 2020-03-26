@@ -113,5 +113,12 @@ namespace Restaurant
 
             formComidas.Show();
         }
+
+        private void reporteDeProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formreporteProductos = new FormReporteProducto();
+     //     formreporteProductos.MdiParent = this;
+            formreporteProductos.Show();
+        }
     }
 }
