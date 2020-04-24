@@ -45,13 +45,14 @@ namespace Restaurant
             Contrasena = textBox2.Text;
 
             button1.Enabled = false;
-            button1.Text = "Verificando Usuairio...";
+            button1.Text = "Verificando Usuario...";
             Application.DoEvents();
 
-            var resultado = _seguridad.Autorizar (Usuario, Contrasena);
+            var usuarioDB = _seguridad.Autorizar (Usuario, Contrasena);
 
-            if(resultado == true)
+            if(usuarioDB != null)
             {
+                Program.UsuarioLogueado = usuarioDB;
                 this.Close();
             }
             else
@@ -65,6 +66,28 @@ namespace Restaurant
         private void FormLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) && !string.IsNullOrEmpty (textBox1 .Text))
+                {
+                textBox2.Focus(); 
+            } 
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        if(e.KeyChar == Convert.ToChar(Keys.Enter) && !string.IsNullOrEmpty (textBox2 .Text))
+                {
+                button1.PerformClick();
+            }
         }
     }
 }

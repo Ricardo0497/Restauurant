@@ -10,16 +10,20 @@ namespace BL.Restaurant
 {
    public  class DatosdeInicio : CreateDatabaseIfNotExists<Contexto> 
     {
+        
        
         protected override void Seed(Contexto contexto)
         {
 
-           var usuarioAdmin = new Usuario(); 
-            usuarioAdmin.Nombre = "Admin";
-            usuarioAdmin.Contrasena = "123";
-            contexto.Usuarios.Add(usuarioAdmin);
+              var usuarioAdmin = new Usuario(); 
+              usuarioAdmin.Nombre = "Admin";
+              usuarioAdmin.Contrasena = "123";
+              usuarioAdmin.TipoUsuario = "Administradores";
+              contexto.Usuarios.Add(usuarioAdmin);
+              
+         
 
-            var usuarioAdmin2 = new Usuario();
+       /*     var usuarioAdmin2 = new Usuario();
             usuarioAdmin2.Nombre = "Admin2";
             usuarioAdmin2.Contrasena = "1234";
             contexto.Usuarios.Add(usuarioAdmin2);
@@ -38,8 +42,7 @@ namespace BL.Restaurant
             usuarioAdmin5.Nombre = "RicardoAnduray";
             usuarioAdmin5.Contrasena = "Ricardo";
             contexto.Usuarios.Add(usuarioAdmin5);
-
-
+            */
 
 
             var tiempo1 = new Tiempo();
@@ -82,6 +85,8 @@ namespace BL.Restaurant
             var cliente4 = new Cliente();
             cliente4.Nombre = "Henry";
             contexto.Clientes.Add(cliente4);
+           
+         
 
 
 

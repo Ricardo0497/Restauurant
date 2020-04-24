@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.Restaurant;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,13 @@ namespace Restaurant
         {
             var formLogin = new FormLogin();
             formLogin.ShowDialog();
+
+            if (Program.UsuarioLogueado != null)
+            {
+                toolStripStatusLabel1.Text = "usuario :" + Program.UsuarioLogueado.Nombre; 
+            }
+
+
             
         }
 
@@ -126,6 +134,25 @@ namespace Restaurant
             var formreporteFacturas = new FormReporteFacturas();
             //     formreporteProductos.MdiParent = this;
             formreporteFacturas.Show();
+        }
+
+        private void administradoresDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var formAdminUsuarios = new FormAdminUsuario();
+
+            formAdminUsuarios.Show();
+            
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

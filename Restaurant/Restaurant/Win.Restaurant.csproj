@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -81,6 +84,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdminUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminUsuario.Designer.cs">
+      <DependentUpon>FormAdminUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAgregar.cs">
       <SubType>Form</SubType>
@@ -183,6 +192,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportProducto.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminUsuario.resx">
+      <DependentUpon>FormAdminUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAgregar.resx">
       <DependentUpon>FormAgregar.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +268,7 @@
     <None Include="Properties\DataSources\BL.Restaurant.ProductosBL.datasource" />
     <None Include="Properties\DataSources\BL.Restaurant.RestaurantSeguridadBL.datasource" />
     <None Include="Properties\DataSources\BL.Restaurant.TiemposBL.datasource" />
+    <None Include="Properties\DataSources\BL.Restaurant.Usuario.datasource" />
     <None Include="Properties\DataSources\System.Data.Entity.SqlServer.SqlAzureExecutionStrategy1.datasource" />
     <None Include="Properties\DataSources\System.Data.Entity.SqlServer.SqlFunctions1.datasource" />
     <None Include="Properties\DataSources\System.Data.Entity.SqlServer.SqlHierarchyIdFunctions1.datasource" />

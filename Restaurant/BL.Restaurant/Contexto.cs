@@ -11,13 +11,17 @@ namespace BL.Restaurant
 {
     public class Contexto : DbContext 
     {
-        public Contexto() : base("Menu")
+        public Contexto() : base(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDBFilename="+
+                                 Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Menu.mdf")  
         {
 
         }
 
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.HasDefaultSchema("Menu");
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             Database.SetInitializer(new DatosdeInicio()); //Agrega datos de inicio a la base de Datos despues de eliminar 
         }
