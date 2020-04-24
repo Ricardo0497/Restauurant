@@ -28,8 +28,60 @@ namespace Restaurant
                 toolStripStatusLabel1.Text = "usuario :" + Program.UsuarioLogueado.Nombre; 
             }
 
+            if(Program.UsuarioLogueado.TipoUsuario == "Usuario de Caja")
+            {
+                productoToolStripMenuItem.Visible = true;
+                diarioToolStripMenuItem.Visible = false;
+                semanalToolStripMenuItem.Visible = false;
+                mensualToolStripMenuItem.Visible = false;
+                facturaToolStripMenuItem.Visible = true;
+                agregarToolStripMenuItem.Visible = false;
+                reporteDeProductoToolStripMenuItem.Visible = false;
+                reporteDeFacturaToolStripMenuItem.Visible = false;
+                cambiarToolStripMenuItem.Visible = true;
+                eliminarUsuarioToolStripMenuItem.Visible = false;
+                administradoresDeUsuariosToolStripMenuItem.Visible = false; 
+                loginToolStripMenuItem.Visible = false;
+                
+            }
 
-            
+            if (Program.UsuarioLogueado.TipoUsuario == "Usuario de Venta")
+            {
+                productoToolStripMenuItem.Visible = true;
+                diarioToolStripMenuItem.Visible = true;
+                semanalToolStripMenuItem.Visible = true;
+                mensualToolStripMenuItem.Visible = true;
+                facturaToolStripMenuItem.Visible = true;
+                agregarToolStripMenuItem.Visible = false;
+                reporteDeProductoToolStripMenuItem.Visible = true ;
+                reporteDeFacturaToolStripMenuItem.Visible = true;
+                cambiarToolStripMenuItem.Visible = true;
+                eliminarUsuarioToolStripMenuItem.Visible = false;
+                administradoresDeUsuariosToolStripMenuItem.Visible = false;
+                loginToolStripMenuItem.Visible = false;
+            }
+
+
+            if(Program.UsuarioLogueado .TipoUsuario == "Administrador de Login" )
+                {
+                productoToolStripMenuItem.Visible = true;
+                diarioToolStripMenuItem.Visible = true;
+                semanalToolStripMenuItem.Visible = true;
+                mensualToolStripMenuItem.Visible = true;
+                facturaToolStripMenuItem.Visible = true;
+                agregarToolStripMenuItem.Visible = false;
+                reporteDeProductoToolStripMenuItem.Visible = true;
+                reporteDeFacturaToolStripMenuItem.Visible = true;
+                cambiarToolStripMenuItem.Visible = true;
+                eliminarUsuarioToolStripMenuItem.Visible = true;
+                administradoresDeUsuariosToolStripMenuItem.Visible = true;
+                loginToolStripMenuItem.Visible = true;
+            }
+
+
+
+
+
         }
 
         private void diarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -153,6 +205,12 @@ namespace Restaurant
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formClientes = new FormClientes();
+            formClientes.ShowDialog();
         }
     }
 }

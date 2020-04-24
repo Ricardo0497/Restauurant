@@ -6,13 +6,12 @@ namespace Restaurant
 {
     public partial class FormClientes : Form
     {
-  
+     
 
         public FormClientes()
         {
             InitializeComponent();
-      
-           
+
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)

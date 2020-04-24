@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using static BL.Restaurant.TiemposBL;
+using System.IO;
 
 namespace BL.Restaurant
 {
@@ -69,28 +70,45 @@ namespace BL.Restaurant
             categoria3.Descripcion = "Cena";
             contexto.Categorias.Add(categoria3);
 
+
+            /*    var cliente1 = new Cliente();
+                cliente1.Nombre = "Ricardo";
+                contexto.Clientes.Add(cliente1);
+
+                var cliente2 = new Cliente();
+                cliente2.Nombre = "Rony";
+                contexto.Clientes.Add(cliente2);
+
+                var cliente3 = new Cliente();
+                cliente3.Nombre = "Isis";
+                contexto.Clientes.Add(cliente3);
+
+                var cliente4 = new Cliente();
+                cliente4.Nombre = "Henry";
+                contexto.Clientes.Add(cliente4);*/
+
+            var archivo = "../../../clientes.csv";
+            using (var reader = new StreamReader(archivo))
+            {
+                reader.ReadLine();
+
+                while(!reader.EndOfStream)
+                {
+                    var linea = reader.ReadLine();
+                    var valores = linea.Split(',');
+
+                    var clienteNuevo = new Cliente();
+                    clienteNuevo.Nombre = valores[0].ToString();
+                    clienteNuevo.Activo = bool.Parse(valores[1].ToString());
+
+                    contexto.Clientes.Add(clienteNuevo); 
+                }
+
+
+            }
+
+
        
-            var cliente1 = new Cliente();
-            cliente1.Nombre = "Ricardo";
-            contexto.Clientes.Add(cliente1);
-
-            var cliente2 = new Cliente();
-            cliente2.Nombre = "Rony";
-            contexto.Clientes.Add(cliente2);
-
-            var cliente3 = new Cliente();
-            cliente3.Nombre = "Isis";
-            contexto.Clientes.Add(cliente3);
-
-            var cliente4 = new Cliente();
-            cliente4.Nombre = "Henry";
-            contexto.Clientes.Add(cliente4);
-           
-         
-
-
-
-
             base.Seed(contexto);
         }
     }

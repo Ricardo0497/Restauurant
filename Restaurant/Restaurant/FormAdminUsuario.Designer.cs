@@ -34,7 +34,6 @@
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label tipoUsuarioLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdminUsuario));
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -53,19 +52,20 @@
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.tipoUsuarioComboBox = new System.Windows.Forms.ComboBox();
             this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripButton();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             contrasenaLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             tipoUsuarioLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingNavigator)).BeginInit();
             this.usuarioBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // contrasenaLabel
@@ -103,10 +103,6 @@
             tipoUsuarioLabel.Size = new System.Drawing.Size(93, 17);
             tipoUsuarioLabel.TabIndex = 7;
             tipoUsuarioLabel.Text = "Tipo Usuario:";
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(BL.Restaurant.Usuario);
             // 
             // usuarioBindingNavigator
             // 
@@ -266,10 +262,10 @@
             this.tipoUsuarioComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.usuarioBindingSource, "TipoUsuario", true));
             this.tipoUsuarioComboBox.FormattingEnabled = true;
             this.tipoUsuarioComboBox.Items.AddRange(new object[] {
-            "Administradores",
+            "",
             "Usuario de Caja",
             "Usuario Administrador de Login",
-            "Usuario Ventas"});
+            "Usuario de Venta"});
             this.tipoUsuarioComboBox.Location = new System.Drawing.Point(163, 252);
             this.tipoUsuarioComboBox.Name = "tipoUsuarioComboBox";
             this.tipoUsuarioComboBox.Size = new System.Drawing.Size(203, 24);
@@ -290,6 +286,15 @@
             this.usuarioDataGridView.RowTemplate.Height = 24;
             this.usuarioDataGridView.Size = new System.Drawing.Size(464, 220);
             this.usuarioDataGridView.TabIndex = 9;
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripTextBox1.Image")));
+            this.toolStripTextBox1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(106, 24);
+            this.toolStripTextBox1.Text = "CANCELAR";
+            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -315,14 +320,9 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "TipoUsuario";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // toolStripTextBox1
+            // usuarioBindingSource
             // 
-            this.toolStripTextBox1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripTextBox1.Image")));
-            this.toolStripTextBox1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(106, 24);
-            this.toolStripTextBox1.Text = "CANCELAR";
-            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
+            this.usuarioBindingSource.DataSource = typeof(BL.Restaurant.Usuario);
             // 
             // FormAdminUsuario
             // 
@@ -341,11 +341,11 @@
             this.Controls.Add(this.usuarioBindingNavigator);
             this.Name = "FormAdminUsuario";
             this.Text = "FormAdminUsuario";
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingNavigator)).EndInit();
             this.usuarioBindingNavigator.ResumeLayout(false);
             this.usuarioBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
