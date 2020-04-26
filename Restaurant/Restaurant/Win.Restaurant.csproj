@@ -175,6 +175,12 @@
     <Compile Include="FormSemanal.Designer.cs">
       <DependentUpon>FormSemanal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioClientes2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioClientes2.Designer.cs">
+      <DependentUpon>FormularioClientes2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSemanal.resx">
       <DependentUpon>FormSemanal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioClientes2.resx">
+      <DependentUpon>FormularioClientes2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuario.resx">
       <DependentUpon>FormUsuario.cs</DependentUpon>

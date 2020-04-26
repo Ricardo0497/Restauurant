@@ -182,5 +182,24 @@ namespace Restaurant
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+               var buscar = textBox1.Text;
+
+                if (string.IsNullOrEmpty(buscar) == true)
+                {
+                    productoBindingSource.DataSource = _productos.ObtenerProductos();         
+                }
+                else
+                {
+                    productoBindingSource.DataSource = _productos.ObtenerProductos(buscar); 
+                }
+                productoBindingSource.ResetBindings(false);
+
+            }
+            
+        }
+
     }
-}
+

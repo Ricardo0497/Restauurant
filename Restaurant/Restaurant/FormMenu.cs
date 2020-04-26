@@ -209,8 +209,8 @@ namespace Restaurant
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formClientes = new FormClientes();
-            formClientes.ShowDialog();
+            var formularioClientes = new FormularioClientes2();
+            formularioClientes.ShowDialog();
         }
     }
 }

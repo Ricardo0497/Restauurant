@@ -75,6 +75,8 @@
             this.listaCategoriasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.listaCategoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tiempoIdComboBox = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             activoLabel = new System.Windows.Forms.Label();
             cantidadLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -405,7 +407,7 @@
             // 
             this.fotoPictureBox.BackColor = System.Drawing.SystemColors.HotTrack;
             this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.productoBindingSource, "Foto", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.fotoPictureBox.Location = new System.Drawing.Point(533, 41);
+            this.fotoPictureBox.Location = new System.Drawing.Point(488, 150);
             this.fotoPictureBox.Name = "fotoPictureBox";
             this.fotoPictureBox.Size = new System.Drawing.Size(250, 156);
             this.fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -486,12 +488,31 @@
             this.tiempoIdComboBox.TabIndex = 26;
             this.tiempoIdComboBox.ValueMember = "Id";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(651, 74);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(132, 22);
+            this.textBox1.TabIndex = 27;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(529, 63);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(108, 45);
+            this.button4.TabIndex = 28;
+            this.button4.Text = "BUSCAR";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(795, 591);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(tiempoIdLabel);
             this.Controls.Add(this.tiempoIdComboBox);
             this.Controls.Add(categoriaIdLabel);
@@ -572,5 +593,7 @@
         private System.Windows.Forms.BindingSource listaCategoriasBindingSource1;
         private System.Windows.Forms.BindingSource listaCategoriasBindingSource;
         private System.Windows.Forms.ComboBox tiempoIdComboBox;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button4;
     }
 }
