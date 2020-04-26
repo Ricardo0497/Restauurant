@@ -486,7 +486,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label1.Font = new System.Drawing.Font("Montserrat Subrayada", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(137, 48);
+            this.label1.Location = new System.Drawing.Point(110, 48);
             this.label1.MaximumSize = new System.Drawing.Size(200, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 37);
